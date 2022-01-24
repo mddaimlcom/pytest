@@ -1,0 +1,38 @@
+
+
+api_tests:
+  - testname: Post company entity with minimum mandatory keys
+    prepare:
+      markers: [post_req, keep_db]
+    request:
+      method: POST
+      params: {}
+      body: {'name': 'Pentalog', 'reg_num': 100}
+    expected:
+      rc: 200
+      header: {}
+      body: {'id':4}
+
+  - testname: Post company entity with minimum mandatory keys and some extra keys
+    prepare:
+      markers: [post_req, keep_db]
+    request:
+      method: POST
+      params: {}
+      body: {'name': 'CodeFactory', 'reg_num': 123, 'country': 'MD'}
+    expected:
+      rc: 200
+      header: {}
+      body: {'id':5}
+
+  - testname: Post company entity with missing mandatory keys
+    prepare:
+      markers: [post_req]
+    request:
+      method: POST
+      params: {}
+      body: {"id": 89,'country': 'Venezuela', 'reg_num': 100}
+    expected:
+      rc: 400
+      header: {}
+      body: {"error": "400 Bad Request: Your request must have following keys ('name', 'reg_num')"}

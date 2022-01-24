@@ -1,0 +1,55 @@
+
+description: Test cases for the GET 'companies' endpoint
+
+api_tests:
+  - testname: Get all companies from the db
+    prepare:
+      markers: [get_req]
+    request:
+      method: GET
+      params: {}
+      body: {}
+    expected:
+      rc: 200
+      header: {}
+      body: [
+        {
+        "id": 1,
+        "name": "Company 1",
+        "reg_num": 1234567891
+        },
+        {
+          "id": 2,
+          "name": "Company 2",
+          "reg_num": 1234567892
+        },
+        {
+          "id": 3,
+          "name": "Company 3",
+          "reg_num": 1234567893
+        }
+      ]
+
+  - testname: Get company record by a valid id provided
+    prepare:
+      markers: [get_req]
+    request:
+      method: GET
+      params: {"id": 1}
+      body: { }
+    expected:
+      rc: 200
+      header: { }
+      body: [ { "id": 1, "name": "Company 1", "reg_num": 1234567891}]
+
+  - testname: Get company record by an invalid id provided
+    prepare:
+      markers: [get_req]
+    request:
+      method: GET
+      params: {"id": 5}
+      body: { }
+    expected:
+      rc: 404
+      header: { }
+      body: {'error': '404 Not Found: Resource not found. The company with id 5 not found'}
