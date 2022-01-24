@@ -29,7 +29,7 @@
     have been made in Pycharm. But again this is more a matter of personal preference and habit. The choice is entirely yours.
    
     **ACCESS**
-    to the repo where the project is stored and available for public download / fork.
+    Make sure you have access to the repo where the project is stored and available for public download / fork.
 
     **OFFICIAL DOCS** 
     - pytest docs with examples: https://docs.pytest.org/en/6.2.x/
@@ -41,11 +41,11 @@
     - pytest related libraries (plugins): https://docs.pytest.org/en/latest/reference/plugin_list.html
 
 
-2. How to set up your environment and get the resource code
+2. **How to set up your environment and get the resource code**
     Install python from the official site (https://www.python.org/downloads/). There you will find details instruction 
     with respect to the OS you choose to work on. When completed, you should perform in console `"python --version"`, then
     you should get the version of your installation
-    Git clone the project form the provided repo link.
+    Git clone the project form the provided repo link: git@github.com:mddaimlcom/pytest.git
     A good practice is to have for your project dependencies stored in a virtual environment, therefore 
     bounded only to your project and without an impact on your entire OS. For more detailed info you can consult the official 
     documentation at https://docs.python.org/3/library/venv.html and the user guide at https://docs.python-guide.org/dev/virtualenvs/.
@@ -61,7 +61,7 @@
     so that pip reads the respective file and install every library with the respective needed version listed there automatically.
    ```
 
-3. Intro into the demo app
+3. **Intro into the demo app**
     In order to materialize the theory into practice I have crafted a very simple api app written with flask library. 
     You can find it in the root directory of the cloned project at app/serve.py. It exposed one endpoint only "companies" 
     that responds to 2 http method calls `"GET" and "POST"`.
@@ -71,7 +71,7 @@
     The json file "db.json" is in the same location folder as the app, there you can see the pre-defined records and also
     'db_bkp.son' that is just a backup of the db that we will use further in our tests
 
-4. Present the test cases list:
+4. **Present the test cases list we will try to automate in our practical examples**:
     1. Get all the records
     2. Get a specific record id
     3. Get a record with invalid id (that does not exist )
@@ -83,6 +83,9 @@
     
 
 6. A bit of theory on fixtures, test parametrisation and more
+
+   Based on the ch3_generics, ch4_divein present the notiosn like fixture scope, markers, prametrisation and how in pytest 
+   methods of dependency injections, test object introspection and test data separation from test logic.
 
 
 7. What is pytest
@@ -134,10 +137,8 @@
     failures happen, but not every single one of them, use the --maxfail option to specify how many failures are okay with you.
     ```
 
-8. Present standard implementation of the pytest suite of tests, with everything that 
-comes from it, pytest.ini, conftest.py, helper modules, hooks overriding
+8. Present standard implementation of the pytest suite of tests, with everything that comes from it, pytest.ini, conftest.py, helper modules, hooks overriding
 
-10. Present custom implementation of the pytest suite of test, that would show 
-how to separate test data form actual implementation of your tests and create your own custom data format
+10. Present custom implementation of the pytest suite of test, that would show how to separate test data form actual implementation of your tests and create your own custom data format
 
 11. Q&A session (15-20 minutes max should be allocated)
