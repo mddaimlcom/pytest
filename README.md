@@ -1,4 +1,4 @@
-# end-presentation-
+# Project pytest
 
 0. What are the goals and agenda of the presentation
     Spark the interest in what python brings to the test automation table and maybe join the community. That’s it, really.

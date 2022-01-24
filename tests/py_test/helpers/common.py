@@ -1,7 +1,6 @@
 from pathlib import Path
-import inspect
 
-PROJECT_NAME = 'end-presentation-'
+PROJECT_NAME = 'pytest'
 
 
 class RootPath:
@@ -36,7 +35,7 @@ def get_absolute_path(path: str) -> Path:
 
 
 if __name__ == '__main__':
-    # tests
+    # internal tests
     import os
-    assert 'end-presentation' in str(RootPath.get_absolute_path())
+    assert PROJECT_NAME in str(RootPath.get_absolute_path())
     assert os.getenv('USERPROFILE') == str(get_absolute_path('~'))
